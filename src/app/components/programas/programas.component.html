@@ -1,1 +1,15 @@
-<p>programas works!</p>
+<section class="container-programas">
+  <div class="content-programas">
+    <h2 class="titulo-programas">Confira Nossos Programas!</h2>
+    <div class="cards-programas">
+      @for (item of programas; track $index) {
+        <div class="card-programa" style="background-image: url('/gym.png');">
+          <div class="card-content">
+            <h2> {{ item.nome }}</h2>
+            <p>{{ item.descricao }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
