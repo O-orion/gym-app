@@ -1,0 +1,26 @@
+<section class="planos-container" aria-label="Planos da academia">
+  <h1 tabindex="0">Escolha seu plano</h1>
+  <div class="planos-grid">
+    <article
+      *ngFor="let plano of planos; trackBy: trackByPlano"
+      [@fadeIn]
+      class="plano-card"
+      [ngClass]="{ 'destaque': plano.destaque }"
+      tabindex="0"
+      role="button"
+      (keydown.enter)="selecionarPlano(plano)"
+      (click)="selecionarPlano(plano)"
+    >
+      <h2>{{ plano.nome }}</h2>
+      <p class="preco">R$ {{ plano.preco | number: '1.2-2' }}/mês</p>
+      <ul>
+        <li *ngFor="let beneficio of plano.beneficios">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="check_circle"></mat-icon>
+          {{ beneficio }}
+        </li>
+
+      </ul>
+      <button class="cta-button">Escolher Plano</button>
+    </article>
+  </div>
+</section>
