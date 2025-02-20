@@ -1,0 +1,94 @@
+.academia-container {
+  padding: 60px;
+  text-align: center;
+}
+
+.academia-titulo {
+  font-weight: 700;
+  font-size: 2.3rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  color: #1b1a1a;
+}
+
+.academia-destaque {
+  color: #0072FF;
+}
+
+.academia-card {
+  position: relative;
+  width: 95%;
+  height: 21rem;
+  margin: 0 auto;
+  background: url('/academia.png') no-repeat center/cover;
+  image-rendering: optimizeQuality;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.academia-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s ease;
+}
+
+.academia-card:hover .academia-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.academia-botao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border-radius: 50px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.academia-botao:hover {
+  transform: scale(1.05);
+}
+
+.academia-icon {
+  font-size: 1.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .academia-titulo {
+    font-size: 2rem;
+  }
+  .academia-card {
+    height: 250px;
+  }
+  .academia-botao {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .academia-titulo {
+    font-size: 1.8rem;
+  }
+  .academia-card {
+    height: 200px;
+  }
+  .academia-botao {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  .academia-icon {
+    font-size: 1.2rem;
+  }
+}
