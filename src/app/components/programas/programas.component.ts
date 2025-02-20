@@ -10,16 +10,19 @@ import { Programa } from '../../models/Programas';
 export class ProgramasComponent {
   programas: Programa[] = [
     {
-      nome: "Bora para o Combate",
-      descricao: "Fortaleça seus músculos e ganhe resistência."
+      nome: "Lutas",
+      descricao: "Fortaleça seus músculos e ganhe resistência.",
+      img: "box.png"
     },
     {
-      nome: "Bora para o Combate",
-      descricao: "Fortaleça seus músculos e ganhe resistência."
+      nome: "Yoga",
+      descricao: "Fortaleça seus músculos e ganhe resistência.",
+      img: "yoga.png"
     },
     {
-      nome: "Bora para o Combate",
-      descricao: "Fortaleça seus músculos e ganhe resistência."
+      nome: "Dança",
+      descricao: "Fortaleça seus músculos e ganhe resistência.",
+      img: "danca.png"
     }
   ]
 }

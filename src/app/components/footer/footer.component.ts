@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatIconModule} from '@angular/material/icon';
 
 interface LinkUtil {
   texto: string;
@@ -15,7 +16,7 @@ interface RedeSocial {
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })
@@ -30,15 +31,15 @@ export class FooterComponent {
   ];
 
   redesSociais: RedeSocial[] = [
-    { nome: 'Facebook', url: 'https://facebook.com', icone: 'fab fa-facebook-f' },
-    { nome: 'Instagram', url: 'https://instagram.com', icone: 'fab fa-instagram' },
-    { nome: 'Twitter', url: 'https://twitter.com', icone: 'fab fa-twitter' },
-    { nome: 'YouTube', url: 'https://youtube.com', icone: 'fab fa-youtube' },
+    { nome: 'Facebook', url: 'https://facebook.com', icone: 'facebook.png' },
+    { nome: 'Instagram', url: 'https://instagram.com', icone: 'instagram.png' },
+    { nome: 'Twitter', url: 'https://twitter.com', icone: 'twitter.png' },
+    { nome: 'YouTube', url: 'https://youtube.com', icone: 'youtube.png' },
   ];
 
   contato = {
-    email: 'contato@academiafit.com',
-    telefone: '(11) 98765-4321',
-    endereco: 'Rua do Fitness, 123 - São Paulo, SP',
+    email: 'contato@academiapro.com',
+    telefone: '(92) 31700-4200',
+    endereco: 'Rua do Fitness, 123 - Manaus, AM',
   };
 }

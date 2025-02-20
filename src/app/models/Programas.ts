@@ -1,4 +1,5 @@
 export interface Programa {
   nome: string,
-  descricao: string
+  descricao: string,
+  img: string
 }
