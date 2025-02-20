@@ -1,12 +1,28 @@
-<nav class="menu">
+<nav class="menu" aria-label="Navegação principal">
   <div class="logo">Academia<span>Pro</span></div>
-  <ul class="links">
-    <li><a href="#" class="item-link">Home</a></li>
-    <li><a href="#" class="item-link">Serviços</a></li>
-    <li><a href="#" class="item-link">Locais</a></li>
-    <li><a href="#" class="item-link">Agenda</a></li>
+
+  <!-- Botão hambúrguer para mobile -->
+  <button
+    class="mobile-toggle"
+    (click)="toggleMobileMenu()"
+    [attr.aria-expanded]="isMobileMenuOpen"
+    aria-label="Abrir ou fechar menu"
+  >
+    <mat-icon [fontIcon]="isMobileMenuOpen ? 'close' : 'menu'"></mat-icon>
+  </button>
+
+  <!-- Links de navegação -->
+  <ul class="links" [ngClass]="{ 'open': isMobileMenuOpen }">
+    <li *ngFor="let link of navLinks">
+      <a
+        class="item-link"
+        [ngClass]="{ 'active': link.ativo }"
+        (click)="scrollToSection(link.url); setActiveLink(link)"
+        [attr.aria-current]="link.ativo ? 'page' : null"
+      >
+        {{ link.texto }}
+      </a>
+    </li>
   </ul>
-  <div class="profile">
-    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="persona"></mat-icon>
-  </div>
+
 </nav>
