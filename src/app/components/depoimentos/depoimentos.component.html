@@ -1,0 +1,56 @@
+<section class="depoimentos-container" aria-label="Depoimentos de clientes">
+  <h1 tabindex="0">O que nossos alunos dizem</h1>
+  <div class="carousel">
+    <button
+      class="nav-button prev"
+      (click)="prevDepoimento()"
+      aria-label="Depoimento anterior"
+      tabindex="0"
+      (keydown.enter)="prevDepoimento()"
+    >
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <div class="depoimento-wrapper">
+      <article
+        *ngIf="depoimentos[currentIndex] as depoimento"
+        [@slideInOut]
+        class="depoimento-card"
+        tabindex="0"
+      >
+        <img src="./{{depoimento.foto}}" [alt]="'Foto de ' + depoimento.nome" class="foto" />
+        <div class="content">
+          <p class="texto">"{{ depoimento.texto }}"</p>
+          <h2>{{ depoimento.nome }}</h2>
+          <div class="estrelas">
+            <i
+              *ngFor="let star of [1, 2, 3, 4, 5]"
+              [ngClass]="star <= depoimento.estrelas ? 'fas fa-star filled' : 'far fa-star'"
+            ></i>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <button
+      class="nav-button next"
+      (click)="nextDepoimento()"
+      aria-label="Próximo depoimento"
+      tabindex="0"
+      (keydown.enter)="nextDepoimento()"
+    >
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <div class="indicadores">
+    <span
+      *ngFor="let depoimento of depoimentos; let i = index"
+      [ngClass]="{ 'active': i === currentIndex }"
+      (click)="goToDepoimento(i)"
+      [attr.aria-label]="'Ir para depoimento de ' + depoimento.nome"
+      tabindex="0"
+      (keydown.enter)="goToDepoimento(i)"
+    ></span>
+  </div>
+</section>
