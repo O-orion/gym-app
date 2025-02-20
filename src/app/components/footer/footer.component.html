@@ -1,1 +1,42 @@
-<p>footer works!</p>
+<footer class="footer-container" aria-label="Rodapé da página">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h3>Academia Fit</h3>
+      <p>Sua parceira para uma vida saudável. Treine com propósito e alcance seus objetivos!</p>
+    </div>
+
+    <div class="footer-section links">
+      <h3>Links Úteis</h3>
+      <ul>
+        <li *ngFor="let link of linksUteis">
+          <a [href]="link.url" [attr.aria-label]="'Ir para ' + link.texto">{{ link.texto }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-section contact">
+      <h3>Contato</h3>
+      <p><i class="fas fa-envelope"></i> {{ contato.email }}</p>
+      <p><i class="fas fa-phone"></i> {{ contato.telefone }}</p>
+      <p><i class="fas fa-map-marker-alt"></i> {{ contato.endereco }}</p>
+    </div>
+
+    <div class="footer-section social">
+      <h3>Siga-nos</h3>
+      <div class="social-links">
+        <a
+          *ngFor="let rede of redesSociais"
+          [href]="rede.url"
+          target="_blank"
+          [attr.aria-label]="rede.nome"
+        >
+          <i [class]="rede.icone"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© {{ currentYear }} Academia Fit. Todos os direitos reservados.</p>
+  </div>
+</footer>
