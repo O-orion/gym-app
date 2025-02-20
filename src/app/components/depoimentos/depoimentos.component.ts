@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { animate, style, transition, trigger } from '@angular/animations';
+import {MatIconModule} from '@angular/material/icon';
 
 interface Depoimento {
   id: number;
@@ -13,7 +14,7 @@ interface Depoimento {
 @Component({
   selector: 'app-depoimentos',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './depoimentos.component.html',
   styleUrls: ['./depoimentos.component.scss'],
   animations: [

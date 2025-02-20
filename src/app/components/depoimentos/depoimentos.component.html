@@ -8,7 +8,7 @@
       tabindex="0"
       (keydown.enter)="prevDepoimento()"
     >
-      <i class="fas fa-chevron-left"></i>
+      <mat-icon>arrow_back</mat-icon>
     </button>
 
     <div class="depoimento-wrapper">
@@ -23,10 +23,10 @@
           <p class="texto">"{{ depoimento.texto }}"</p>
           <h2>{{ depoimento.nome }}</h2>
           <div class="estrelas">
-            <i
+            <mat-icon
               *ngFor="let star of [1, 2, 3, 4, 5]"
               [ngClass]="star <= depoimento.estrelas ? 'fas fa-star filled' : 'far fa-star'"
-            ></i>
+            >star</mat-icon>
           </div>
         </div>
       </article>
@@ -39,7 +39,7 @@
       tabindex="0"
       (keydown.enter)="nextDepoimento()"
     >
-      <i class="fas fa-chevron-right"></i>
+    <mat-icon>arrow_forward</mat-icon>
     </button>
   </div>
 
